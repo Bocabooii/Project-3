@@ -1,0 +1,14 @@
+.app-nav a {
+    margin-right: 20px;
+}
+
+.app-nav {
+    margin-left: auto;
+}
+
+.ascii-art {
+    font-family: monospace;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 10px;
+}
