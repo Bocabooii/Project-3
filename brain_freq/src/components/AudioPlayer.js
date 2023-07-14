@@ -36,9 +36,11 @@ const AudioPlayer = () => {
       <header className="app-header">
           <h1 className="app-title">Brain Freq</h1>
           <nav className="app-nav">
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
+              <select onChange={(e) => window.location.href = e.target.value}>
+                <option value="#">Home</option>
+                <option value="#">About</option>
+                <option value="#">Contact</option>
+              </select>
           </nav>
       </header>
       <div className="audio-player">
@@ -59,16 +61,17 @@ const AudioPlayer = () => {
         </div>
       </div>
       <footer className="app-footer">
-    <pre className="ascii-art">
-      _    _ _______ _____ ____  _   _ 
-     | |  | |__   __|_   _/ __ \| \ | |
-     | |  | |  | |    | || |  | |  \| |
-     | |  | |  | |    | || |  | | . ` |
-     | |__| |  | |   _| || |__| | |\  |
-      \____/   |_|  |_____\____/|_| \_|
-    </pre>
-    <p>&copy; 2023 Brain Freq. All rights reserved.</p>
-</footer>
+        <pre className="ascii-art">
+          <code>
+            {`▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+              ██░███░██░▄▄▄██░█████░▄▄▀██░▄▄▄░██░▄▀▄░██░▄▄▄
+              ██░█░█░██░▄▄▄██░█████░█████░███░██░█░█░██░▄▄▄
+              ██▄▀▄▀▄██░▀▀▀██░▀▀░██░▀▀▄██░▀▀▀░██░███░██░▀▀▀
+              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀`}
+          </code>
+        </pre>
+        <p>&copy; 2023 Brain Freq. All rights reserved.</p>
+      </footer>
     </div>
   );
 

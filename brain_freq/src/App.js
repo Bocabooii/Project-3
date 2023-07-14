@@ -1,6 +1,6 @@
 import logo from './logo.svg';
-import './index.css'; // import from SRC folder
-import './styles/index.css'; // import from styles folder in SRC
+import './index.css'; 
+import './styles/index.css'; 
 import './styles/custom-progress-bar.css';
 import './styles/cosmic-animations.css';
 import './styles/brain-freq-styles.css';
