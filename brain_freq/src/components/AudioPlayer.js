@@ -36,9 +36,11 @@ const AudioPlayer = () => {
       <header className="app-header">
           <h1 className="app-title">Brain Freq</h1>
           <nav className="app-nav">
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
+              <select onChange={(e) => window.location.href = e.target.value}>
+                <option value="#">Home</option>
+                <option value="#">About</option>
+                <option value="#">Contact</option>
+              </select>
           </nav>
       </header>
       <div className="audio-player">
