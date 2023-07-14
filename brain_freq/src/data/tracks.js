@@ -1,9 +1,9 @@
-// audio files
+// audio files / MP3
 import OM from './omMantra.mp3';
 import rhythmicRespirations from './rhythmicRespirations.mp3'
 import universalAwareness from './universalAwareness.mp3'
 
-// audio thumbnails
+// media thumbnails
 import Meditaion from './advancedMeditation.jpg';
 
 export const tracks = [
