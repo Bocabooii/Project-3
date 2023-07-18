@@ -60,18 +60,6 @@ const AudioPlayer = () => {
           <ProgressBar {...{ progressBarRef, audioRef, timeProgress, duration }} />
         </div>
       </div>
-      <footer className="app-footer">
-        <pre className="ascii-art">
-          <code>
-            {`▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-              ██░███░██░▄▄▄██░█████░▄▄▀██░▄▄▄░██░▄▀▄░██░▄▄▄
-              ██░█░█░██░▄▄▄██░█████░█████░███░██░█░█░██░▄▄▄
-              ██▄▀▄▀▄██░▀▀▀██░▀▀░██░▀▀▄██░▀▀▀░██░███░██░▀▀▀
-              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀`}
-          </code>
-        </pre>
-        <p>&copy; 2023 Brain Freq. All rights reserved.</p>
-      </footer>
     </div>
   );
 

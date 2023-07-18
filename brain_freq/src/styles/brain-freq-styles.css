@@ -1,14 +1,21 @@
-.app-nav a {
-    margin-right: 20px;
+.app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-title {
+  font-weight: bold;
 }
 
 .app-nav {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
-  }
-  
+  position: absolute;
+  left: 0;
+}
 
+.app-nav select {
+  font-weight: bold;
+}
 
 .ascii-art {
     font-family: monospace;
