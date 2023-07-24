@@ -18,7 +18,7 @@ import Login from './pages/Login';
 
 const httpLink = createHttpLink({
   // uri: '/graphql',
-  uri: 'http://localhost:3000/graphql',
+  uri: 'http://localhost:3001/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
