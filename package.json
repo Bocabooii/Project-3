@@ -1,0 +1,22 @@
+{
+  "name": "programming-thoughts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server --ignore client",
+    "develop": "concurrently \"cd brain_freq/server && npm run start\" \"cd brain_freq/client && npm start\"",
+    "install": "cd brain_freq/server && npm i && cd ..brain_freq/client && npm i",
+    "seed": "cd brain_freq/server && npm run seed",
+    "build": "cd brain_freq/client && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
