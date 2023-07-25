@@ -42,9 +42,9 @@ const Login = (props) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+      <div className="col-12 col-lg-10 absolute inset-0 flex items-center justify-center p-4">
+        <div className="card w-full md:w-375 p-4 bg-lightOverlay shadow-2xl rounded-md backdrop-blur-md flex flex-col items-center justify-center">
+          <h4 className="card-header bg-dark text-light p-2 ">Login</h4>
           <div className="card-body">
             {data ? (
               <p>
