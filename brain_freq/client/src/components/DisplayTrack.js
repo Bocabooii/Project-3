@@ -1,4 +1,3 @@
-import React from 'react';
 import { BsMusicNoteBeamed } from 'react-icons/bs';
 
 const DisplayTrack = ({ currentTrack, audioRef, setDuration,

@@ -1,30 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-
-import Header from "./components/Header";
-import Footer from './components/Footer';
-import Profile from './pages/Profile';
+import Home from './pages/Home';
+import Detail from './pages/Detail';
+import NoMatch from './pages/NoMatch';
+import Login from './pages/Login.js';
 import Signup from './pages/Signup';
-import Login from './pages/Login';
+import Nav from './components/Nav';
+import { StoreProvider } from './utils/GlobalState';
+import Success from './pages/Success';
+import OrderHistory from './pages/OrderHistory';
+import About from './pages/About'; // import the About component
+import Contact from './pages/Contact'; // import the Contact component
 
 const httpLink = createHttpLink({
-  // uri: '/graphql',
   uri: 'http://localhost:3001/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
   const token = localStorage.getItem('id_token');
-  // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
@@ -32,46 +28,32 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+
 const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
 function App() {
   return (
-  <ApolloProvider client={client}>
-    <Router>
-      <div className="flex-column justify-flex-start min-100-vh">
-        <Header />
-        <div className="container">
+    <ApolloProvider client={client}>
+      <Router>
+        <StoreProvider>
+          <Nav />
           <Routes>
-            <Route 
-              path="/" 
-              element={<Home />}
-            />
-            <Route 
-              path="/login" 
-              element={<Login />}
-            />
-            <Route 
-              path="/signup" 
-              element={<Signup />}
-            />
-            <Route 
-              path="/me" 
-              element={<Profile />}
-            />
-            <Route 
-              path="/profiles/:profileId"
-              element={<Profile />}
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/orderHistory" element={<OrderHistory />} />
+            <Route path="/products/:id" element={<Detail />} />
+            <Route path="/about" element={<About />} /> {/* Define the route for the About page */}
+            <Route path="/contact" element={<Contact />} /> {/* Define the route for the Contact page */}
+            <Route path="*" element={<NoMatch />} />
           </Routes>
-        </div>
-        <Footer />
-      </div>
-    </Router>
-  </ApolloProvider>
+        </StoreProvider>
+      </Router>
+    </ApolloProvider>
   );
 }
 

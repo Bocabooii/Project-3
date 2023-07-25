@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useCallback, useEffect, useRef } from 'react';
 
 // icons
@@ -40,15 +39,17 @@ const Controls = ({
     const playAnimationRef = useRef();
 
     const repeat = useCallback(() => {
-        const currentTime = audioRef?.current?.currentTime;
-        setTimeProgress(currentTime);
-        progressBarRef.current.value = currentTime;
-        progressBarRef.current.style.setProperty(
+        const currentTime = audioRef.current?.currentTime;
+        if (currentTime) {
+          setTimeProgress(currentTime);
+          progressBarRef.current.value = currentTime;
+          progressBarRef.current.style.setProperty(
             '--range-progress',
-            `${(progressBarRef?.current?.value / duration) * 100}%`
-        );
-        playAnimationRef.current = requestAnimationFrame(repeat);
-    }, [audioRef, duration, progressBarRef, setTimeProgress]);
+            `${(progressBarRef.current.value / duration) * 100}%`
+          );
+          playAnimationRef.current = requestAnimationFrame(repeat);
+        }
+      }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
     useEffect(() => {
         if (isPlaying) {
@@ -67,11 +68,15 @@ const Controls = ({
     }, [volume, audioRef, muteVolume]);
 
     const skipForward = () => {
-        audioRef.current.currentTime += 15;
+        if (audioRef.current) {
+            audioRef.current.currentTime += 15;
+        }
     };
-
+    
     const skipBackward = () => {
-        audioRef.current.currentTime -= 15;
+        if (audioRef.current) {
+            audioRef.current.currentTime -= 15;
+        }
     };
 
     const handlePrevious = () => {
