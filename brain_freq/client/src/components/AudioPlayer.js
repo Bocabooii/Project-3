@@ -33,16 +33,6 @@ const AudioPlayer = () => {
   
   return (
     <div className="app cosmic-theme cosmic-body">
-      <header className="app-header">
-          <h1 className="app-title">Brain Freq</h1>
-          <nav className="app-nav">
-              <select onChange={(e) => window.location.href = e.target.value}>
-                <option value="#">Home</option>
-                <option value="#">About</option>
-                <option value="#">Contact</option>
-              </select>
-          </nav>
-      </header>
       <div className="audio-player">
         <div className="inner">
           <DisplayTrack {...{ currentTrack, audioRef, setDuration, progressBarRef, handleNext }} />
