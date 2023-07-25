@@ -7,6 +7,7 @@ body {
   background: #0d0c22; 
   color: #FFF; 
   margin: 0 10px;
+  padding: 10px;
 }
 
 .audio-player {
@@ -141,6 +142,16 @@ button svg {
   margin: 10px 0px;
 }
 
+.menu-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+}
+.app-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
