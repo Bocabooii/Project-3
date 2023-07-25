@@ -7,10 +7,9 @@ import './styles/custom-progress-bar.css';
 import './styles/brain-freq-styles.css'; 
 import './styles/cosmic-animations.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
