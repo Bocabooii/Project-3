@@ -1,0 +1,29 @@
+.app-nav a {
+    margin-right: 20px;
+}
+
+.app-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  
+
+
+.ascii-art {
+    font-family: monospace;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.app-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1c1b33;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
