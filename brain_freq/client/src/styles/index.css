@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
 }
@@ -6,7 +10,8 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #0d0c22; 
   color: #FFF; 
-  margin: 0 10px;
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 10px;
 }
 
@@ -152,6 +157,8 @@ button svg {
   font-size: 2rem;
   font-weight: bold;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+.image-wrap {
+  max-width: 500px;
+  margin: 0 auto;
+}
