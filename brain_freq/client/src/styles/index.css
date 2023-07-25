@@ -134,6 +134,13 @@ button svg {
   margin: 0;
 }
 
+.form-input {
+  color: black;
+  padding: 5px;
+  display: block;
+  margin: 10px 0px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
