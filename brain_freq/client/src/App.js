@@ -36,12 +36,24 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Other routes can be added here */}
-      </Routes>
-    </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <StoreProvider>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/orderHistory" element={<OrderHistory />} />
+            <Route path="/products/:id" element={<Detail />} />
+            <Route path="/about" element={<About />} /> {/* Define the route for the About page */}
+            <Route path="/contact" element={<Contact />} /> {/* Define the route for the Contact page */}
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+        </StoreProvider>
+      </Router>
+    </ApolloProvider>
   );
 }
 

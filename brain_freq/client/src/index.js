@@ -14,11 +14,11 @@ const client = new ApolloClient({
 });
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
+  </React.StrictMode>,
+  document.getElementById('root')
   </React.StrictMode>,
   document.getElementById('root')
 );
