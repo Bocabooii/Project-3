@@ -16,8 +16,8 @@ import About from './pages/About'; // import the About component
 import Contact from './pages/Contact'; // import the Contact component
 
 const httpLink = createHttpLink({
-  // uri: 'http://localhost:3001/graphql',
-  uri: 'https://brainfreq-server.vercel.app/graphql',
+  uri: `${process.env.SERVER_URI || 'http://localhost:3001'}/graphql`,
+  // uri: 'https://brainfreq-server.vercel.app/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
