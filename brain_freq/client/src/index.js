@@ -8,7 +8,7 @@ import './styles/brain-freq-styles.css';
 import './styles/cosmic-animations.css';
 
 const client = new ApolloClient({
-  // uri: 'https://flyby-router-demo.herokuapp.com/',
+  // uri: 'https://brainfreq-backend-1dcd4ce53528.herokuapp.com/graphql',
   uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache(),
 });
