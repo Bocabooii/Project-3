@@ -10,7 +10,8 @@ import './styles/cosmic-animations.css';
 const client = new ApolloClient({
   // uri: 'https://flyby-router-demo.herokuapp.com/',
   // uri: 'http://localhost:3001/graphql',
-  uri: 'https://brainfreq-server.vercel.app/graphql',
+  // uri: 'https://brainfreq-server.vercel.app/graphql',
+  uri: `${process.env.SERVER_URI || 'http://localhost:3001'}/graphql`,
   cache: new InMemoryCache(),
 });
 
