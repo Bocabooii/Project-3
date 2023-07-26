@@ -5,32 +5,24 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
-    // categories: async () => {
-    //   return await Category.find();
-    // },
-    // products: async (parent, { category, name }) => {
-    //   const params = {};
+    products: async (parent, { name }) => {
+      const params = {};
 
-    //   if (category) {
-    //     params.category = category;
-    //   }
+      if (name) {
+        params.name = {
+          $regex: name
+        };
+      }
 
-    //   if (name) {
-    //     params.name = {
-    //       $regex: name
-    //     };
-    //   }
-
-    //   return await Product.find(params).populate('category');
-    // },
-    // product: async (parent, { _id }) => {
-    //   return await Product.findById(_id).populate('category');
-    // },
+      return await Product.find(params);
+    },
+    product: async (parent, { _id }) => {
+      return await Product.findById(_id);
+    },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
-        //   populate: 'category'
         });
 
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
@@ -44,7 +36,6 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
-        //   populate: 'category'
         });
 
         return user.orders.id(_id);

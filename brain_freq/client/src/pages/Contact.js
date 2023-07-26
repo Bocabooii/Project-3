@@ -1,21 +1,26 @@
-import React from "react";
-import Layout from '../pages/Layout';
-// import Auth from '../utils/auth'; 
-// import { Link } from "react-router-dom";
+import React from 'react';
+import '../styles/contact.css';
 
 const Contact = () => {
   return (
-    <Layout>
-        <div className="container">
-          <p>
-            <b>Phone:</b> +1 888-89-1234
-          </p>
-          <p>
-            <b>Email: </b> some@thing.com
-          </p>
-      </div>
-    </Layout>
-    
+    <div className="contact-container">
+      <h2>Contact</h2>
+      <form>
+        <div className="contact-form-group">
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div className="contact-form-group">
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div className="contact-form-group">
+          <label htmlFor="message">Message:</label>
+          <textarea id="message" name="message" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 

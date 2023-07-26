@@ -1,8 +1,8 @@
 import React from "react";
 import AudioPlayer from "../components/AudioPlayer";
-import Layout from '../pages/Layout';
-// import Auth from '../utils/auth';
-// import { Link } from "react-router-dom";
+import Layout from  "../pages/Layout";
+import ProductList from "../components/ProductList";
+import Cart from "../components/Cart/index";
 
 const Home = () => {
 
@@ -10,6 +10,8 @@ const Home = () => {
     <Layout>
       <div className="container">
         <AudioPlayer />
+        <ProductList />
+        <Cart />
       </div>
     </Layout>
 
