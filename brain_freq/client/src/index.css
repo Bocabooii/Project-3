@@ -1,8 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -10,9 +6,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #0d0c22; 
   color: #FFF; 
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 10px;
+  margin: 0 10px;
 }
 
 .audio-player {
@@ -138,27 +132,4 @@ button svg {
 
 .top__bar p {
   margin: 0;
-}
-
-.form-input {
-  color: black;
-  padding: 5px;
-  display: block;
-  margin: 10px 0px;
-}
-
-.menu-wrap {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-
-}
-.app-title {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.image-wrap {
-  max-width: 500px;
-  margin: 0 auto;
-}
+} */

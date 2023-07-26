@@ -5,6 +5,7 @@ import ProductList from "../components/ProductList";
 import Cart from "../components/Cart/index";
 
 const Home = () => {
+
   return (
     <Layout>
       <div className="container">
@@ -13,6 +14,7 @@ const Home = () => {
         <Cart />
       </div>
     </Layout>
+
   );
 };
 
