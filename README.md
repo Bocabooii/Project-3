@@ -61,6 +61,9 @@ To use the React application, follow these steps:
 
 After installing and running the application, the portfolio will be accessible through your web browser at http://localhost:3000.
 Navigate through the different sections...
+
+Here is our Presentation Regarding the BrainFreqApp: https://docs.google.com/presentation/d/14Hs4Mx_8-W7pnGfrj8qgtmZAVJVD3Tz1NcEH3NiEu_M/edit?usp=sharing
+
 ## Contributing
 Contributions to this project are welcome. To contribute, please follow these steps:
 
