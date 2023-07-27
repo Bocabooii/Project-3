@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node api/index.js",
     "watch": "nodemon",
-    "seed": "node api/config/seeds.js"
+    "seed": "node api/config/seeds.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
