@@ -1,0 +1,11 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "## Table of Contents - [Description](#description) - [User Story](#user-story) - [Acceptance Criteria](#acceptance-criteria) - [Installation](#installation) - [Usage](#usage) - [Contributing](#contributing) - [License](#license)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
