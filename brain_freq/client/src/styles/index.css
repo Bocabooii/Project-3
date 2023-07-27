@@ -140,6 +140,7 @@ button svg {
   margin: 0;
 }
 
+input,
 .form-input {
   color: black;
   padding: 5px;

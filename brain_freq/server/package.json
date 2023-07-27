@@ -2,11 +2,11 @@
   "name": "mern-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node api/index.js",
     "watch": "nodemon",
-    "seed": "node config/seeds.js"
+    "seed": "node api/config/seeds.js"
   },
   "keywords": [],
   "author": "",

@@ -8,6 +8,8 @@ class AuthService {
   loggedIn() {
     // Checks if there is a saved token and it's still valid
     const token = this.getToken();
+    console.log("Token: ", token);
+    console.log("Is logged in: ", !!token && !this.isTokenExpired(token));
     return !!token && !this.isTokenExpired(token);
   }
 
@@ -42,4 +44,6 @@ class AuthService {
   }
 }
 
-export default new AuthService();
+const authService = new AuthService();
+
+export default authService;

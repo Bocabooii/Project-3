@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -12,6 +12,7 @@ import './style.css';
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
+  console.log(useStoreContext());
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
@@ -21,18 +22,21 @@ const Cart = () => {
         res.redirectToCheckout({ sessionId: data.checkout.session });
       });
     }
-  }, [data]);
-
+  }, [data, getCheckout]); // <- stripePromise removed from dependencies
+  
+  const idbPromiseCallback = useCallback(idbPromise, []);
+  
   useEffect(() => {
     async function getCart() {
-      const cart = await idbPromise('cart', 'get');
-      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+      const cart = await idbPromiseCallback('cart', 'get');
+      const validItems = cart.filter(item => !!item);
+      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...validItems] });
     }
-
+  
     if (!state.cart.length) {
       getCart();
     }
-  }, [state.cart.length, dispatch]);
+  }, [state.cart.length, dispatch, idbPromiseCallback]);
 
   function toggleCart() {
     dispatch({ type: TOGGLE_CART });
@@ -76,12 +80,11 @@ const Cart = () => {
         [close]
       </div>
       <h2>Shopping Cart</h2>
-      {state.cart.length ? (
-        <div>
-          {state.cart.map((item) => (
-            <CartItem key={item._id} item={item} />
-          ))}
-
+      {state.cart?.length ? (
+    <div>
+    {state.cart.map((item) => (
+        <CartItem key={item._id} item={item} />
+    ))}
           <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>
 
